@@ -6,6 +6,6 @@ import react from "@vitejs/plugin-react";
 export default () => {
   return defineConfig({
     plugins: [react()],
-    base: "resume_demo",
+    base: "/resume_demo",
   });
 };
