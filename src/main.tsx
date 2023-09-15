@@ -8,7 +8,7 @@ import "@radix-ui/themes/styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename={`${import.meta.env.VITE_BASENAME}`}>
+    <BrowserRouter basename="resume_demo">
       <App />
     </BrowserRouter>
   </React.StrictMode>
