@@ -8,6 +8,7 @@ const Demo = ({
   imgSrc,
   description,
   shouldDisplay,
+  ytUrl = "",
 }: PathConfig) => {
   return shouldDisplay ? (
     <Box className="bg-gray-50 py-4 px-5 mb-2 mx-2 w-1/2 rounded-sm ">
@@ -20,6 +21,21 @@ const Demo = ({
           >
             {name}
           </Link>
+          {ytUrl ? (
+            <>
+              <br />
+              <Link
+                className="cursor-pointer text-red-300 "
+                to={url}
+                target="_blank"
+              >
+                {ytUrl}{" "}
+                <span className="text-black">
+                  (YouTube連結48:08-53:48，約5分鐘)
+                </span>
+              </Link>
+            </>
+          ) : null}
         </HoverCard.Trigger>
         <HoverCard.Content className="bg-lime-50 rounded-md shadow-md">
           <Box className="flex flex-col gap-5 text-black">

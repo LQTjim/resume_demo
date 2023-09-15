@@ -7,14 +7,14 @@ export default function Announce() {
     <Box className="py-1">
       *切版素材來自 :
       <Box className="indent-8">
-        {patheConfigs.map((p, i) => {
-          const link = (
+        {patheConfigs.map((p) => {
+          const link = p.originUrl ? (
             <Link key={p.name} className="text-red-500" to={p.originUrl}>
               {p.name}
             </Link>
-          );
-          if (patheConfigs.length - 1 === i) {
-            return <>,{link}</>;
+          ) : null;
+          if (link != null) {
+            return <>/{link}</>;
           }
           return link;
         })}
