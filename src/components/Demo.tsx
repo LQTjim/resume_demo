@@ -2,8 +2,14 @@ import * as HoverCard from "@radix-ui/react-hover-card";
 import { Box, Text } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import type { PathConfig } from "../config/pathConfig";
-const Demo = ({ url, name, imgSrc, description }: PathConfig) => {
-  return (
+const Demo = ({
+  url,
+  name,
+  imgSrc,
+  description,
+  shouldDisplay,
+}: PathConfig) => {
+  return shouldDisplay ? (
     <Box className="bg-gray-50 py-4 px-5 mb-2 mx-2 w-1/2 rounded-sm ">
       <HoverCard.Root>
         <HoverCard.Trigger>
@@ -26,7 +32,7 @@ const Demo = ({ url, name, imgSrc, description }: PathConfig) => {
         </HoverCard.Content>
       </HoverCard.Root>{" "}
     </Box>
-  );
+  ) : null;
 };
 
 export default Demo;
