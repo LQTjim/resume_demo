@@ -5,6 +5,7 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
 import "@radix-ui/themes/styles.css";
+import "./styles/radix.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

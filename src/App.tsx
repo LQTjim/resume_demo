@@ -3,18 +3,21 @@ import { Box } from "@radix-ui/themes";
 import { patheConfigs } from "./config/pathConfig";
 import type { PathConfig } from "./config/pathConfig";
 import Demo from "./components/Demo";
-import Announce from "./components/Announce";
 
 function App() {
   return (
-    <Box className="flex w-full flex-col items-center justify-center text-lg text-slate-50">
-      <Box className="pb-1">
-        下方連結點擊導向對應githubpages，hover標題可以預覽縮圖
+    <Box className="flex w-full flex-col items-center justify-center  ">
+      <Box className="px-5 py-3 m-2 bg-white text-4xl rounded-md ">
+        LQT作品合集，詳細資料包含網址及code
       </Box>
-      {patheConfigs.map((pathConfig: PathConfig) => {
-        return <Demo key={pathConfig.name} {...pathConfig} />;
-      })}
-      <Announce />
+      <Box
+        className="grid grid-cols-1 
+      sm:grid-cols-2 md:grid-cols-4 gap-4 "
+      >
+        {patheConfigs.map((pathConfig: PathConfig) => {
+          return <Demo key={pathConfig.name} {...pathConfig} />;
+        })}
+      </Box>
     </Box>
   );
 }
